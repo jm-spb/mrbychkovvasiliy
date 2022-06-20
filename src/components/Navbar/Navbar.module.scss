@@ -1,0 +1,159 @@
+@import '../../styles/config';
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  @include container-main;
+  width: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoName {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  display: block;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-left: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.button {
+  @include btn;
+  background-color: #000000;
+}
+
+.links {
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  // padding: 0 1rem;
+  background-color: black;
+
+  .hamburger {
+    display: none;
+    margin-right: 0.5rem;
+  }
+}
+
+.container {
+  @include container-main;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    .dropdownContent {
+      display: block;
+    }
+  }
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  width: 20rem;
+  z-index: 10;
+  background-color: #f9f9f9;
+}
+
+.more {
+  display: inline-block;
+  line-height: 2.5rem;
+  color: #ffffff;
+  padding: 0 0.5rem;
+}
+
+.mainLink {
+  display: inline-block;
+  color: #ffffff;
+  margin-right: 1.2rem;
+  line-height: 2.5rem;
+}
+
+.addLink {
+  display: block;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 0.5rem;
+
+  &:hover {
+    background-color: #dddddd;
+  }
+}
+
+@media (max-width: 1080px) {
+  .dropdownContent {
+    right: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  // .container,
+  // .dropdown {
+  //   display: none;
+  // }
+
+  .links {
+    position: relative;
+    justify-content: end;
+
+    .hamburger {
+      display: inline-block;
+    }
+  }
+
+  .container {
+    // height: 100%;
+    position: absolute;
+    top: 2.5rem;
+    // display: flex;
+    display: none;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    background-color: #f9f9f9;
+    padding: 0;
+  }
+
+  .mainLink {
+    color: black;
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+      background-color: #dddddd;
+    }
+  }
+
+  .more {
+    display: none;
+  }
+
+  .dropdownContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .isActive {
+    display: flex;
+  }
+}
