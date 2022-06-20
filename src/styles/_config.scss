@@ -1,0 +1,13 @@
+@mixin container-main {
+  max-width: 1640px;
+}
+
+@mixin container-content {
+  max-width: 1640px;
+}
+
+@mixin btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  border: none;
+}
