@@ -1,18 +1,15 @@
 import React from 'react';
-import Footer from '../Footer';
-import Navbar from '../Navbar';
 import '../../styles/normalize.scss';
 import * as styles from './Layout.module.scss';
+import Footer from '../Footer';
+import Navbar from '../Navbar';
 
-const Layout = ({ children }) => {
-  console.log('INDEX');
-  return (
-    <div className={styles.container}>
-      <Navbar />
-      {children}
-      <Footer />
-    </div>
-  );
-};
+const Layout = ({ children }) => (
+  <div className={styles.container}>
+    <Navbar />
+    {children}
+    <Footer />
+  </div>
+);
 
 export default Layout;
