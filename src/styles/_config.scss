@@ -1,13 +1,32 @@
+$main-color: #235b71;
+$secondary-color: #e1eff2;
+$btn-secondary-color: #04a29a;
+
 @mixin container-main {
   max-width: 1640px;
 }
 
 @mixin container-content {
-  max-width: 1640px;
+  max-width: 960px;
 }
 
-@mixin btn {
+@mixin btn-main {
   color: #ffffff;
+  background-color: #000000;
   padding: 0.8rem;
-  border: none;
+  border: 1px solid #000000;
+}
+
+@mixin btn-outline {
+  color: #000000;
+  background-color: none;
+  border: 1px solid #000000;
+  padding: 0.8rem;
+}
+
+@mixin btn-secondary {
+  color: #ffffff;
+  background-color: $btn-secondary-color;
+  border: 1px solid $btn-secondary-color;
+  padding: 0.8rem;
 }
