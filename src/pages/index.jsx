@@ -63,6 +63,15 @@ const Home = () => {
             />
           </section>
         </article>
+        <article className={styles.areas}>
+          <section className={styles.areasContainer}>
+            <h2 className={styles.areasHeading}>Основные направления деятельности</h2>
+            <p className={styles.areasParagraph}>
+              Тут представлены стандартные перечни услуг для бизнеса, которые мы оказываем
+              компаниям и корпорациям из разный сфер деятельности
+            </p>
+          </section>
+        </article>
       </main>
     </Layout>
   );
