@@ -49,11 +49,11 @@
 }
 
 .questionBtn {
-  @include btn;
+  @include btn-main;
 }
 
 .mission {
-  background-color: rgb(225, 239, 242);
+  background-color: $secondary-color;
 }
 
 .missionSection {
@@ -84,5 +84,26 @@
   @include btn-secondary;
 }
 
-.missionLogo {
+.areas {
+  background-color: $main-color;
+}
+
+.areasContainer {
+  @include container-content;
+  margin: 0 auto;
+  padding: 6rem;
+  text-align: center;
+}
+
+.areasHeading {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.areasParagraph {
+  color: #ffffff;
+  line-height: 1.5;
 }
