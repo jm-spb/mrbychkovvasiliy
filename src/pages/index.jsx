@@ -1,12 +1,15 @@
 import React from 'react';
 import * as styles from './index.module.scss';
 import { StaticImage } from 'gatsby-plugin-image';
+
 import Layout from '../components/Layout';
+import { activityAreas } from '../content/Home';
 
 const Home = () => {
   return (
     <Layout>
       <main>
+        {/* СЛАЙД 1 - ОХРАНА ТРУДА */}
         <article className={styles.occupational}>
           <StaticImage
             src="../assets/images/index/index-1.webp"
@@ -43,6 +46,7 @@ const Home = () => {
             </section>
           </div>
         </article>
+        {/* СЛАЙД 2 - НАША МИССИЯ */}
         <article className={styles.mission}>
           <section className={styles.missionSection}>
             <div className={styles.missionContent}>
@@ -63,13 +67,190 @@ const Home = () => {
             />
           </section>
         </article>
+        {/* СЛАЙД 3 - ОСНОВНЫЕ НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ */}
         <article className={styles.areas}>
-          <section className={styles.areasContainer}>
-            <h2 className={styles.areasHeading}>Основные направления деятельности</h2>
-            <p className={styles.areasParagraph}>
-              Тут представлены стандартные перечни услуг для бизнеса, которые мы оказываем
-              компаниям и корпорациям из разный сфер деятельности
+          <section className={styles.areasHeader}>
+            <div className={styles.containerContent}>
+              <h2 className={styles.areasHeading}>Основные направления деятельности</h2>
+              <p className={styles.areasParagraph}>
+                Тут представлены стандартные перечни услуг для бизнеса, которые мы
+                оказываем компаниям и корпорациям из разный сфер деятельности
+              </p>
+            </div>
+          </section>
+          <section className={styles.areasContent}>
+            <div className={styles.areasCard}>
+              <div className={styles.areasText}>
+                <h2>{activityAreas[0].heading}</h2>
+                {activityAreas[0].content.map(({ link, text }) => (
+                  <a href={link} target="blanc">
+                    {text}
+                  </a>
+                ))}
+              </div>
+              <StaticImage
+                src="../assets/images/index/index-2.webp"
+                alt={activityAreas[0].heading}
+                className={styles.areasImg}
+                placeholder="blurred"
+                layout="constrained"
+              />
+              <div className={styles.areasBackground} />
+            </div>
+
+            <div className={styles.areasCard}>
+              <div className={styles.areasText}>
+                <h2>{activityAreas[1].heading}</h2>
+                {activityAreas[1].content.map(({ link, text }) => (
+                  <a href={link} target="blanc">
+                    {text}
+                  </a>
+                ))}
+              </div>
+              <StaticImage
+                src="../assets/images/index/index-3.webp"
+                alt={activityAreas[1].heading}
+                className={styles.areasImg}
+                placeholder="blurred"
+                layout="constrained"
+              />
+              <div className={styles.areasBackground} />
+            </div>
+
+            <div className={styles.areasCard}>
+              <div className={styles.areasText}>
+                <h2>{activityAreas[2].heading}</h2>
+                {activityAreas[2].content.map(({ link, text }) => (
+                  <a href={link} target="blanc">
+                    {text}
+                  </a>
+                ))}
+              </div>
+              <StaticImage
+                src="../assets/images/index/index-4.webp"
+                alt={activityAreas[2].heading}
+                className={styles.areasImg}
+                placeholder="blurred"
+                layout="constrained"
+              />
+              <div className={styles.areasBackground} />
+            </div>
+
+            <div className={styles.areasCard}>
+              <div className={styles.areasText}>
+                <h2>{activityAreas[3].heading}</h2>
+                {activityAreas[3].content.map(({ link, text }) => (
+                  <a href={link} target="blanc">
+                    {text}
+                  </a>
+                ))}
+              </div>
+              <StaticImage
+                src="../assets/images/index/index-5.webp"
+                alt={activityAreas[3].heading}
+                className={styles.areasImg}
+                placeholder="blurred"
+                layout="constrained"
+              />
+              <div className={styles.areasBackground} />
+            </div>
+          </section>
+        </article>
+        {/* СЛАЙД 4 - НАПРАВЛЕНИЯ РАЗВИТИЯ ОХРАНЫ ТРУДА */}
+        <article className={styles.growth}>
+          <section className={styles.growthHeader}>
+            <h2>Направления развития охраны труда</h2>
+            <p>
+              Для нас одинаково важна работа в каждом из этих направлений, все услуги для
+              студентов и специалистов оказываются абсолютно бесплатно, мы хотим, что бы
+              вы развивались и создавали безопасные условия на своих рабочих местах.
             </p>
+          </section>
+          <section className={styles.growthContent}>
+            <div className={styles.growthCard}>
+              <div className={styles.growthTop}>
+                <div className={styles.growthTopImg}>
+                  <h3>Работодателям</h3>
+                  <StaticImage
+                    src="../assets/images/human-resources/hr-1.webp"
+                    alt="Работодателям"
+                    className={styles.growthImg}
+                    placeholder="blurred"
+                    layout="constrained"
+                  />
+                </div>
+                <div className={styles.growthText}>
+                  <h4>Для работодателей</h4>
+                  <p>Аудит компаний HSE ISO</p>
+                  <p>Разработка и проведение тренингов</p>
+                  <p>Реализация проектов HSE ISO</p>
+                  <p>Оценка профессиональных рисков</p>
+                  <p>Подбор спец-тов в короткие сроки</p>
+                  <p>Подбор сформированной команды</p>
+                  <p>Проведение оценки знаний спец-тов</p>
+                  <p>Подготовка новых специалистов</p>
+                  <p>Анализ вовлеченности сотрудников</p>
+                </div>
+              </div>
+              <div className={styles.growthBottom}>
+                <button className={styles.growthBtn}>Задать свой вопрос</button>
+              </div>
+            </div>
+
+            <div className={styles.growthCard}>
+              <div className={styles.growthTop}>
+                <div className={styles.growthTopImg}>
+                  <h3>Специалистам</h3>
+                  <StaticImage
+                    src="../assets/images/human-resources/hr-2.webp"
+                    alt="Специалистам"
+                    className={styles.growthImg}
+                    placeholder="blurred"
+                    layout="constrained"
+                  />
+                </div>
+                <div className={styles.growthText}>
+                  <h4>Для специалистов</h4>
+                  <p>Проведение семинаров</p>
+                  <p>Карьерный консалтинг </p>
+                  <p>Подбор нового места работы</p>
+                  <p>Поиск коллег с предыдущего проекта</p>
+                  <p>Консультации по поиску работы</p>
+                  <p>Обмен мнениями, контактами</p>
+                  <p>Поиск дополнительного заработка</p>
+                </div>
+              </div>
+              <div className={styles.growthBottom}>
+                <button className={styles.growthBtn}>Написать нам</button>
+              </div>
+            </div>
+
+            <div className={styles.growthCard}>
+              <div className={styles.growthTop}>
+                <div className={styles.growthTopImg}>
+                  <h3>Студентам</h3>
+                  <StaticImage
+                    src="../assets/images/human-resources/hr-3.webp"
+                    alt="Студентам"
+                    className={styles.growthImg}
+                    placeholder="blurred"
+                    layout="constrained"
+                  />
+                </div>
+                <div className={styles.growthText}>
+                  <h4>Для студентов</h4>
+                  <p>Проведение открытых лекций</p>
+                  <p>Подбор места для практики</p>
+                  <p>Поиск наставника или консультанта</p>
+                  <p>Подбор рецензентов для диплома</p>
+                  <p>Поиск первого работодателя</p>
+                  <p>Работа для совмещения с учебой</p>
+                </div>
+              </div>
+              <div className={styles.growthBottom}>
+                <button className={styles.growthBtn}>Заполнить анкету</button>
+              </div>
+            </div>
           </section>
         </article>
       </main>
