@@ -84,15 +84,18 @@
   @include btn-secondary;
 }
 
-.areas {
+.areasHeader {
+  // @include container-content;
   background-color: $main-color;
+  // margin: 0 auto;
+  // padding: 6rem;
+  text-align: center;
 }
 
-.areasContainer {
+.containerContent {
   @include container-content;
   margin: 0 auto;
   padding: 6rem;
-  text-align: center;
 }
 
 .areasHeading {
@@ -106,4 +109,174 @@
 .areasParagraph {
   color: #ffffff;
   line-height: 1.5;
+}
+
+.areasContent {
+  @include container-main;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.areasCard {
+  position: relative;
+  &:nth-child(2),
+  &:nth-child(3) {
+    .areasBackground {
+      display: block;
+      opacity: 0.3;
+    }
+
+    h2,
+    a {
+      color: #ffffff;
+    }
+  }
+}
+
+.areasText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  z-index: 1;
+  padding: 4rem 0 0 2rem;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+}
+
+.areasImg {
+  width: 100%;
+}
+
+.areasBackground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  display: none;
+}
+
+.growth {
+  @include container-main;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.growthHeader {
+  @include container-content;
+  margin: 0 auto 4rem auto;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 2.6rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+.growthContent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.growthCard {
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .growthBtn {
+    min-width: 11rem;
+  }
+
+  &:nth-child(1) {
+    .growthBtn {
+      @include btn-secondary;
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: $secondary-color;
+
+    .growthBtn {
+      @include btn-secondary;
+      background-color: $main-color;
+    }
+  }
+
+  &:nth-child(3) {
+    .growthBtn {
+      @include btn-main;
+    }
+  }
+}
+
+.growthTopImg {
+  position: relative;
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    z-index: 1;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #000000,
+      0 0 30px #000000, 0 0 40px #000000, 0 0 55px #000000, 0 0 75px #000000;
+  }
+}
+
+.growthImg {
+  // margin-bottom: 4rem;
+}
+
+.growthText {
+  padding: 3rem 2rem 2rem 2rem;
+  h4 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+  }
+}
+
+.growthBottom {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.growthBtn {
 }
