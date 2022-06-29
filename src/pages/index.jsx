@@ -253,6 +253,27 @@ const Home = () => {
             </div>
           </section>
         </article>
+        {/* СЛАЙД 5 - СКИДКА ДЛЯ НОВЫХ КЛИЕНТОВ */}
+        <article className={styles.discount}>
+          <section className={styles.discountContainer}>
+            <StaticImage
+              src="../assets/images/index/index-6.webp"
+              alt="Студентам"
+              className={styles.discountImg}
+              placeholder="blurred"
+              layout="constrained"
+            />
+            <div className={styles.discountBox}>
+              <div className={styles.discountTop}>
+                <span className={styles.discountText}>
+                  Для новых клиентов первая услуга за:
+                </span>
+                <span className={styles.discountPercent}>50%</span>
+              </div>
+              <button className={styles.discountBtn}>Заказать!</button>
+            </div>
+          </section>
+        </article>
       </main>
     </Layout>
   );
