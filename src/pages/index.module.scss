@@ -254,10 +254,6 @@
   }
 }
 
-.growthImg {
-  // margin-bottom: 4rem;
-}
-
 .growthText {
   padding: 3rem 2rem 2rem 2rem;
   h4 {
@@ -289,9 +285,6 @@
   position: relative;
 }
 
-.discountImg {
-}
-
 .discountBox {
   background-color: #ffffff;
   width: 50%;
@@ -303,9 +296,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.discountTop {
 }
 
 .discountText {
@@ -323,4 +313,39 @@
   @include btn-secondary;
   width: 11rem;
   font-size: 1.5rem;
+}
+
+.about {
+  @include container-main;
+  margin: 0 auto;
+  display: flex;
+}
+
+.aboutImg {
+  flex-grow: 1;
+}
+
+.aboutContent {
+  max-width: 50%;
+  padding: 8rem;
+}
+
+.aboutHeading {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  margin-bottom: 3rem;
+}
+.aboutParagraph {
+  font-size: 1.2rem;
+  line-height: 1.5;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.aboutLink {
+  text-decoration: underline;
 }
