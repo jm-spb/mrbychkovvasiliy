@@ -258,7 +258,7 @@ const Home = () => {
           <section className={styles.discountContainer}>
             <StaticImage
               src="../assets/images/index/index-6.webp"
-              alt="Студентам"
+              alt="Скидка новым клиентам"
               className={styles.discountImg}
               placeholder="blurred"
               layout="constrained"
@@ -271,6 +271,49 @@ const Home = () => {
                 <span className={styles.discountPercent}>50%</span>
               </div>
               <button className={styles.discountBtn}>Заказать!</button>
+            </div>
+          </section>
+        </article>
+        {/* СЛАЙД 6 - О НАС */}
+        <article>
+          <section className={styles.about}>
+            <StaticImage
+              src="../assets/images/index/index-7.webp"
+              alt="О нас"
+              className={styles.aboutImg}
+              placeholder="blurred"
+              layout="constrained"
+            />
+            <div className={styles.aboutContent}>
+              <h1 className={styles.aboutHeading}>О нас</h1>
+              <p className={styles.aboutParagraph}>
+                Включены в реестр Мин.Труда РФ{' '}
+                <a
+                  href="https://83360706-4eb9-40e0-b671-ab81fa291e44.filesusr.com/ugd/598d9b_e11f65770d004ee5a97bf21f519d8399.pdf"
+                  className={styles.aboutLink}
+                  target="_blanc"
+                  rel="noopener noreferrer"
+                >
+                  №7888
+                </a>
+              </p>
+              <p className={styles.aboutParagraph}>
+                7 лет помогаем проходить проверки ГИТ в разных регионах страны
+              </p>
+              <p className={styles.aboutParagraph}>
+                Собственная база специалистов по ОТ, ПБ и ООС готовых к работе
+              </p>
+              <p className={styles.aboutParagraph}>
+                Большой объем готовых и проверенных решений для компаний разных сфер
+                деятельности
+              </p>
+              <p className={styles.aboutParagraph}>
+                Собственное оборудование для проведения испытаний, практических занятий,
+                съемок видео
+              </p>
+              <p className={styles.aboutParagraph}>
+                Можем быстро и дистанционно подготовить необходимые вам документы
+              </p>
             </div>
           </section>
         </article>
