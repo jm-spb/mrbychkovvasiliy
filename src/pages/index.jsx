@@ -4,8 +4,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import { activityAreas } from '../content/Home';
+import Carousel from '../components/Carousel';
+import { graphql } from 'gatsby';
 
-const Home = () => {
+const Home = ({ data }) => {
+  console.log(data);
   return (
     <Layout>
       <main>
@@ -317,9 +320,34 @@ const Home = () => {
             </div>
           </section>
         </article>
+        {/* СЛАЙД 7 - SWIPER */}
+        <article>
+          <Carousel data={data.allContentJson.edges[0].node.carousel} />
+        </article>
       </main>
     </Layout>
   );
 };
 
 export default Home;
+
+export const query = graphql`
+  {
+    allContentJson {
+      edges {
+        node {
+          carousel {
+            button
+            heading
+            text
+            imgSrc {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
