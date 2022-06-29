@@ -1,0 +1,71 @@
+@import '../../styles/config';
+
+.form {
+  width: 100%;
+}
+
+.label {
+  line-height: 2;
+  display: block;
+  margin-top: 0.5rem;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  padding: 1rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.errorBox {
+  min-height: 1.5rem;
+}
+
+.error {
+  color: red;
+
+  &::before {
+    display: inline;
+    content: '⚠ ';
+  }
+}
+
+.btn {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: end;
+}
+
+.submit {
+  @include btn-main;
+  font-size: 1.2rem;
+  padding: 1rem 4rem;
+
+  &:hover {
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.signup {
+  display: block;
+  color: white;
+  text-align: center;
+
+  &__link {
+    margin-left: 4px;
+    // color: $link-color;
+  }
+}
