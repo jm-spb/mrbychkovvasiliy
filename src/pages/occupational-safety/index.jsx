@@ -2,15 +2,16 @@ import React from 'react';
 import * as styles from './oc-safety.module.scss';
 import Layout from '../../components/Layout';
 import { StaticImage } from 'gatsby-plugin-image';
+import AppForm from '../../components/AppForm';
 
 const OccupationalSafety = () => {
   return (
     <Layout>
       <main>
-        <article className={styles.content}>
+        <section className={styles.content}>
           <h1 className={styles.pageHeading}>Охрана труда</h1>
           <section className={styles.cards}>
-            <section>
+            <article>
               <StaticImage
                 src="../../assets/images/occupational-safety/oc-safety-1.webp"
                 alt="Аудит и подготовка документов"
@@ -40,9 +41,9 @@ const OccupationalSafety = () => {
                   <p>Стоимость от 12 000 руб.</p>
                 </div>
               </div>
-            </section>
+            </article>
 
-            <section>
+            <article>
               <StaticImage
                 src="../../assets/images/occupational-safety/oc-safety-2.webp"
                 alt="Аутсорсинг по охране труда"
@@ -87,9 +88,9 @@ const OccupationalSafety = () => {
                   <p>Стоимость от 7 000 руб.</p>
                 </div>
               </div>
-            </section>
+            </article>
 
-            <section>
+            <article>
               <StaticImage
                 src="../../assets/images/occupational-safety/oc-safety-3.webp"
                 alt="Проведение ежегодных мероприятий"
@@ -120,9 +121,9 @@ const OccupationalSafety = () => {
                   <p>Стоимость от 15 000 руб.</p>
                 </div>
               </div>
-            </section>
+            </article>
 
-            <section>
+            <article>
               <StaticImage
                 src="../../assets/images/occupational-safety/oc-safety-4.webp"
                 alt="Расследование несчастных случаев"
@@ -153,9 +154,28 @@ const OccupationalSafety = () => {
                   <p>Стоимость от 20 000 руб.</p>
                 </div>
               </div>
-            </section>
+            </article>
           </section>
-        </article>
+        </section>
+        <section className={styles.discount}>
+          <article className={styles.content}>
+            <h1 className={styles.discountHeading}>
+              Получите 50% скидку на первый заказ
+            </h1>
+            <p className={styles.paragraph}>
+              Уже сегодня наши специалисты будут решать ваши задачи
+            </p>
+            <p className={styles.paragraph}>
+              Мы понимаем, что <strong>вопросы</strong> охраны труда и производственной
+              безопасности носят неотлагательный характер и зачастую их решение{' '}
+              <strong>необходимо прямо сейчас</strong> или нужно было вчера. Наши
+              специалисты смогут решить даже самые сложные и критические вопросы. И прежде
+              всего мы <strong>гарантируем качество</strong> предоставляемых услуг{' '}
+              <strong>в срок и конфиденциальность</strong> если ее требует заказчик.
+            </p>
+            <AppForm />
+          </article>
+        </section>
       </main>
     </Layout>
   );
