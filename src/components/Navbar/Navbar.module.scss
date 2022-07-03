@@ -30,8 +30,7 @@
 }
 
 .button {
-  @include btn;
-  background-color: #000000;
+  @include btn-main;
 }
 
 .links {
@@ -43,7 +42,6 @@
 
   .hamburger {
     display: none;
-    margin-right: 0.5rem;
 
     button {
       height: 100%;
@@ -55,6 +53,9 @@
   @include container-main;
   padding: 0 1rem;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dropdown {
@@ -101,25 +102,33 @@
   }
 }
 
+.phoneNumber {
+  color: #ffffff;
+}
+
 @media (max-width: 1080px) {
   .dropdownContent {
     right: 0;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 820px) {
   .links {
     position: relative;
     justify-content: end;
 
-    .hamburger {
-      display: inline-block;
+    .container {
+      .hamburger {
+        display: inline-block;
+      }
     }
   }
 
-  .container {
+  .menu {
+    width: 100%;
     position: absolute;
     top: 2.5rem;
+    left: 0;
     display: none;
     flex-direction: column;
     background-color: #f9f9f9;
@@ -128,7 +137,7 @@
 
   .mainLink {
     color: black;
-    width: 100%;
+    margin: 0;
     text-align: center;
 
     &:hover {

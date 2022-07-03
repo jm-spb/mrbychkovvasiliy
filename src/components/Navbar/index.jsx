@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import classNames from 'classnames';
-import { additionalNavLinks, mainNavLinks } from '../../content';
+import { additionalNavLinks, mainNavLinks } from '../../content/Navbar';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className={styles.header}>
         <Link to="/" className={styles.logoName}>
           <StaticImage
-            src="../../assets/logo-medium.webp"
+            src="../../assets/images/logo-medium.webp"
             alt="Центр развития охраны труда"
             width={80}
             height={80}
