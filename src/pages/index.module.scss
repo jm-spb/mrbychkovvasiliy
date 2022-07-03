@@ -36,7 +36,7 @@
 
 .paragraph {
   font-size: 1rem;
-  max-width: fit-content;
+  // max-width: fit-content;
 
   &:not(:last-child) {
     margin-bottom: 0.5rem;
@@ -85,10 +85,7 @@
 }
 
 .areasHeader {
-  // @include container-content;
   background-color: $main-color;
-  // margin: 0 auto;
-  // padding: 6rem;
   text-align: center;
 }
 
@@ -122,6 +119,8 @@
 
 .areasCard {
   position: relative;
+  width: 100%;
+
   &:nth-child(2),
   &:nth-child(3) {
     .areasBackground {
@@ -246,8 +245,10 @@
     font-weight: 400;
     color: #ffffff;
     position: absolute;
+    left: 50%;
     top: 50%;
-    left: 33%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #000000,
       0 0 30px #000000, 0 0 40px #000000, 0 0 55px #000000, 0 0 75px #000000;
@@ -256,6 +257,7 @@
 
 .growthText {
   padding: 3rem 2rem 2rem 2rem;
+
   h4 {
     font-size: 1.4rem;
     text-align: center;
@@ -318,25 +320,26 @@
 .about {
   @include container-main;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .aboutImg {
-  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
 .aboutContent {
-  max-width: 50%;
-  padding: 8rem;
+  padding: 6rem 4rem 6rem 2rem;
 }
 
 .aboutHeading {
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: 400;
-
   margin-bottom: 3rem;
 }
+
 .aboutParagraph {
   font-size: 1.2rem;
   line-height: 1.5;
@@ -349,3 +352,54 @@
 .aboutLink {
   text-decoration: underline;
 }
+
+.request {
+  @include container-content;
+  margin: 0 auto;
+  padding: 6rem 0;
+}
+
+.requestText {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.contacts {
+  background-color: $secondary-color;
+}
+
+.contactsContainer {
+  @include container-content;
+  margin: 0 auto;
+  padding: 6rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+// .contactsMap {
+//   flex: 1;
+// }
+
+// .contactsInfo {
+//   flex: 1;
+// }
+
+.contactsHeading {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0 0 2rem 0;
+}
+
+.contactsParagraph {
+  font-size: 1.2rem;
+  line-height: 1.5;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+@import './index-media.module.scss';
