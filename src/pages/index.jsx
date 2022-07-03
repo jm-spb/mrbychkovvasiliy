@@ -1,11 +1,11 @@
 import React from 'react';
 import * as styles from './index.module.scss';
 import { StaticImage } from 'gatsby-plugin-image';
-
-import Layout from '../components/Layout';
-import { activityAreas } from '../content/Home';
-import Carousel from '../components/Carousel';
 import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Carousel from '../components/Carousel';
+import AppForm from '../components/AppForm';
+import { activityAreas } from '../content/Home';
 
 const Home = ({ data }) => {
   console.log(data);
@@ -17,6 +17,7 @@ const Home = ({ data }) => {
           <StaticImage
             src="../assets/images/index/index-1.webp"
             alt="Центр развития охраны труда"
+            className={styles.occupImg}
             placeholder="blurred"
             layout="fullWidth"
           />
@@ -24,7 +25,7 @@ const Home = ({ data }) => {
             <section className={styles.section}>
               <h1 className={styles.heading}>ОХРАНА ТРУДА</h1>
               <h2 className={styles.subHeading}>для КОМПАНИЙ, СПЕЦИАЛИСТОВ, СТУДЕНТОВ</h2>
-              <div className={styles.text}>
+              <div>
                 <p className={styles.paragraph}>
                   Помогаем компаниям решать нестандартные вопросы по охране труда
                 </p>
@@ -42,7 +43,7 @@ const Home = ({ data }) => {
                   производства
                 </p>
               </div>
-              <div className={styles.buttons}>
+              <div>
                 <button className={styles.servicesBtn}>Услуги для бизнеса</button>
                 <button className={styles.questionBtn}>Срочный вопрос</button>
               </div>
@@ -63,15 +64,14 @@ const Home = ({ data }) => {
             </div>
             <StaticImage
               src="../assets/images/index/logo-large.webp"
-              alt="Центр развития охраны труда"
-              className={styles.missionLogo}
+              alt="Логотип"
               placeholder="blurred"
               layout="constrained"
             />
           </section>
         </article>
         {/* СЛАЙД 3 - ОСНОВНЫЕ НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ */}
-        <article className={styles.areas}>
+        <article>
           <section className={styles.areasHeader}>
             <div className={styles.containerContent}>
               <h2 className={styles.areasHeading}>Основные направления деятельности</h2>
@@ -86,7 +86,7 @@ const Home = ({ data }) => {
               <div className={styles.areasText}>
                 <h2>{activityAreas[0].heading}</h2>
                 {activityAreas[0].content.map(({ link, text }) => (
-                  <a href={link} target="blanc">
+                  <a key={text} href={link} target="_blanc">
                     {text}
                   </a>
                 ))}
@@ -105,7 +105,7 @@ const Home = ({ data }) => {
               <div className={styles.areasText}>
                 <h2>{activityAreas[1].heading}</h2>
                 {activityAreas[1].content.map(({ link, text }) => (
-                  <a href={link} target="blanc">
+                  <a key={text} href={link} target="_blanc">
                     {text}
                   </a>
                 ))}
@@ -124,7 +124,7 @@ const Home = ({ data }) => {
               <div className={styles.areasText}>
                 <h2>{activityAreas[2].heading}</h2>
                 {activityAreas[2].content.map(({ link, text }) => (
-                  <a href={link} target="blanc">
+                  <a key={text} href={link} target="_blanc">
                     {text}
                   </a>
                 ))}
@@ -143,7 +143,7 @@ const Home = ({ data }) => {
               <div className={styles.areasText}>
                 <h2>{activityAreas[3].heading}</h2>
                 {activityAreas[3].content.map(({ link, text }) => (
-                  <a href={link} target="blanc">
+                  <a key={text} href={link} target="_blanc">
                     {text}
                   </a>
                 ))}
@@ -171,15 +171,14 @@ const Home = ({ data }) => {
           </section>
           <section className={styles.growthContent}>
             <div className={styles.growthCard}>
-              <div className={styles.growthTop}>
+              <div>
                 <div className={styles.growthTopImg}>
                   <h3>Работодателям</h3>
                   <StaticImage
                     src="../assets/images/human-resources/hr-1.webp"
                     alt="Работодателям"
-                    className={styles.growthImg}
                     placeholder="blurred"
-                    layout="constrained"
+                    layout="fullWidth"
                   />
                 </div>
                 <div className={styles.growthText}>
@@ -201,15 +200,14 @@ const Home = ({ data }) => {
             </div>
 
             <div className={styles.growthCard}>
-              <div className={styles.growthTop}>
+              <div>
                 <div className={styles.growthTopImg}>
                   <h3>Специалистам</h3>
                   <StaticImage
                     src="../assets/images/human-resources/hr-2.webp"
                     alt="Специалистам"
-                    className={styles.growthImg}
                     placeholder="blurred"
-                    layout="constrained"
+                    layout="fullWidth"
                   />
                 </div>
                 <div className={styles.growthText}>
@@ -229,15 +227,14 @@ const Home = ({ data }) => {
             </div>
 
             <div className={styles.growthCard}>
-              <div className={styles.growthTop}>
+              <div>
                 <div className={styles.growthTopImg}>
                   <h3>Студентам</h3>
                   <StaticImage
                     src="../assets/images/human-resources/hr-3.webp"
                     alt="Студентам"
-                    className={styles.growthImg}
                     placeholder="blurred"
-                    layout="constrained"
+                    layout="fullWidth"
                   />
                 </div>
                 <div className={styles.growthText}>
@@ -262,12 +259,11 @@ const Home = ({ data }) => {
             <StaticImage
               src="../assets/images/index/index-6.webp"
               alt="Скидка новым клиентам"
-              className={styles.discountImg}
               placeholder="blurred"
               layout="constrained"
             />
             <div className={styles.discountBox}>
-              <div className={styles.discountTop}>
+              <div>
                 <span className={styles.discountText}>
                   Для новых клиентов первая услуга за:
                 </span>
@@ -280,13 +276,15 @@ const Home = ({ data }) => {
         {/* СЛАЙД 6 - О НАС */}
         <article>
           <section className={styles.about}>
-            <StaticImage
-              src="../assets/images/index/index-7.webp"
-              alt="О нас"
-              className={styles.aboutImg}
-              placeholder="blurred"
-              layout="constrained"
-            />
+            <div className={styles.aboutImg}>
+              <StaticImage
+                src="../assets/images/index/index-7.webp"
+                alt="О нас"
+                placeholder="blurred"
+                layout="constrained"
+              />
+            </div>
+
             <div className={styles.aboutContent}>
               <h1 className={styles.aboutHeading}>О нас</h1>
               <p className={styles.aboutParagraph}>
@@ -294,7 +292,7 @@ const Home = ({ data }) => {
                 <a
                   href="https://83360706-4eb9-40e0-b671-ab81fa291e44.filesusr.com/ugd/598d9b_e11f65770d004ee5a97bf21f519d8399.pdf"
                   className={styles.aboutLink}
-                  target="_blanc"
+                  target="__blanc"
                   rel="noopener noreferrer"
                 >
                   №7888
@@ -323,6 +321,48 @@ const Home = ({ data }) => {
         {/* СЛАЙД 7 - SWIPER */}
         <article>
           <Carousel data={data.allContentJson.edges[0].node.carousel} />
+        </article>
+        {/* СЛАЙД 8 - ЗАЯВКА */}
+        <article>
+          <section className={styles.request}>
+            <p className={styles.requestText}>
+              Звоните 8-800-505-20-41 или оставляйте заявку
+            </p>
+            <p className={styles.requestText}>
+              Мы понимаем, что вопросы охраны труда и производственной безопасности носят
+              неотлагательный характер и зачастую их решение необходимо прямо сейчас или
+              нужно было вчера. Специалисты Первый Трудовой.РФ смогут решить даже самые
+              сложные и критические вопросы. И прежде всего мы гарантируем качество
+              предоставляемых услуг в срок и конфиденциальность если ее требует заказчик.
+            </p>
+            <p className={styles.requestText}>
+              Уже сегодня наши специалисты будут решать ваши задачи.
+            </p>
+            <AppForm />
+          </section>
+        </article>
+        {/* СЛАЙД 9 - КОНТАКТЫ */}
+        <article className={styles.contacts}>
+          <section className={styles.contactsContainer}>
+            <div className={styles.contactsMap}>
+              <iframe
+                title="Office geolocation"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A3db3f299483c9230391b96559fa752d218dd6bdfaf9aaba69cd7b7ed5e0b3b8b&amp;source=constructor"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+              ></iframe>
+            </div>
+            <div className={styles.contactsInfo}>
+              <h1 className={styles.contactsHeading}>Контакты</h1>
+              <p className={styles.contactsParagraph}>
+                Санкт-Петербург, ул. Липовая Аллея, дом 9, литера А, этаж 9, помещение 25Н
+              </p>
+              <p className={styles.contactsParagraph}>ohranatryda@inbox.ru</p>
+              <p className={styles.contactsParagraph}>8-800-505-20-41</p>
+              <p className={styles.contactsParagraph}>8-812-987-12-77</p>
+            </div>
+          </section>
         </article>
       </main>
     </Layout>
