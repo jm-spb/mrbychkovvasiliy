@@ -7,10 +7,8 @@
 }
 
 .pageHeading {
-  text-transform: uppercase;
-  font-size: 2rem;
-  margin: 0 0 4rem 0;
-  text-align: center;
+  @include heading-main;
+  margin-bottom: 4rem;
 }
 
 .cards {
@@ -64,23 +62,4 @@
   p {
     line-height: 1.5;
   }
-}
-
-.discount {
-  background-color: $secondary-color;
-}
-
-.discountHeading {
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  font-weight: 400;
-  margin: 0 0 2rem 0;
-  text-align: center;
-}
-
-.paragraph {
-  font-size: 1.2rem;
-  text-align: center;
-  line-height: 1.7;
-  margin-bottom: 2rem;
 }
