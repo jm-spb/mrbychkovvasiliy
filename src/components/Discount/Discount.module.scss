@@ -1,0 +1,26 @@
+@import '../../styles/config';
+
+.discount {
+  background-color: $secondary-color;
+}
+
+.content {
+  @include container-content;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
