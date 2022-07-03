@@ -24,11 +24,11 @@ const Carousel = ({ data }) => {
       {data.map(({ heading, text, imgSrc, button }) => {
         const image = getImage(imgSrc);
         return (
-          <SwiperSlide className={styles.slide}>
+          <SwiperSlide key={heading} className={styles.slide}>
             <GatsbyImage image={image} alt={heading} className={styles.image} />
             <div className={styles.container}>
               <div className={styles.content}>
-                <div className={styles.top}>
+                <div>
                   <h1 className={styles.heading}>{heading}</h1>
                   <p className={styles.paragraph}>{text}</p>
                 </div>
