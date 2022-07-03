@@ -1,10 +1,13 @@
 import React from 'react';
 import * as styles from './oc-safety.module.scss';
-import Layout from '../../components/Layout';
 import { StaticImage } from 'gatsby-plugin-image';
-import AppForm from '../../components/AppForm';
+import Layout from '../../components/Layout';
+import Discount from '../../components/Discount';
+import { discountContent } from '../../content/discount';
 
 const OccupationalSafety = () => {
+  const { heading, text_1, text_2 } = discountContent;
+
   return (
     <Layout>
       <main>
@@ -157,25 +160,7 @@ const OccupationalSafety = () => {
             </article>
           </section>
         </section>
-        <section className={styles.discount}>
-          <article className={styles.content}>
-            <h1 className={styles.discountHeading}>
-              Получите 50% скидку на первый заказ
-            </h1>
-            <p className={styles.paragraph}>
-              Уже сегодня наши специалисты будут решать ваши задачи
-            </p>
-            <p className={styles.paragraph}>
-              Мы понимаем, что <strong>вопросы</strong> охраны труда и производственной
-              безопасности носят неотлагательный характер и зачастую их решение{' '}
-              <strong>необходимо прямо сейчас</strong> или нужно было вчера. Наши
-              специалисты смогут решить даже самые сложные и критические вопросы. И прежде
-              всего мы <strong>гарантируем качество</strong> предоставляемых услуг{' '}
-              <strong>в срок и конфиденциальность</strong> если ее требует заказчик.
-            </p>
-            <AppForm />
-          </article>
-        </section>
+        <Discount heading={heading} text_1={text_1} text_2={text_2} />
       </main>
     </Layout>
   );
