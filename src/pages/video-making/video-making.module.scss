@@ -1,0 +1,139 @@
+@import '../../styles/config';
+
+.header {
+  position: relative;
+}
+
+.headerWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.container {
+  @include container-content;
+  margin: 0 auto;
+}
+
+.heading {
+  @include heading-main;
+}
+
+.headerText {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.videoWrap {
+  height: 560px;
+}
+
+.video {
+  object-fit: cover;
+}
+
+.discription {
+  background-color: $secondary-color;
+  padding: 6rem 0;
+}
+
+.discHeading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style-position: inside;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.advantages {
+  background-color: $main-color;
+  color: #ffffff;
+  padding: 4rem 0;
+}
+
+.advHeading {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.headingParagraph {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.advBox {
+  margin-top: 4rem;
+}
+
+.advBlock {
+  display: flex;
+  gap: 2rem;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}
+
+.blockImg {
+  max-width: 220px;
+  border-radius: 50%;
+  flex: 1;
+}
+
+.text {
+  flex: 2;
+  align-self: center;
+}
+
+.blockHeading {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.blockParagraph {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.clients {
+  padding: 6rem 0;
+}
+
+.top {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.topHeading {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0 0 2rem 0;
+}
+
+.topParagraph {
+  font-size: 1.5rem;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
