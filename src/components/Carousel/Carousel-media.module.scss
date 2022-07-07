@@ -1,0 +1,17 @@
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 4rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .content {
+    padding: 2rem 4rem 3rem 4rem;
+  }
+}
