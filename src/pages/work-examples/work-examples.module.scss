@@ -1,0 +1,42 @@
+@import '../../styles/config';
+
+.container {
+  @include container-content;
+  margin: 0 auto;
+  padding: 4rem 0;
+
+  & > p {
+    text-align: center;
+  }
+}
+
+.mainHeading {
+  @include heading-main;
+  margin: 0;
+}
+
+.paragraph {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.example {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.exampleHeading {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
