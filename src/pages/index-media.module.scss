@@ -3,8 +3,11 @@
   .request,
   .contactsContainer,
   .areasText,
-  .aboutContent {
-    padding: 2rem;
+  .aboutContent,
+  .growthHeader,
+  .containerContent,
+  .container {
+    padding: 2rem 1rem;
   }
 
   .contactsHeading {
@@ -33,7 +36,6 @@
   }
 
   .container {
-    padding: 2rem;
     position: static;
   }
 
@@ -47,7 +49,6 @@
   }
 
   .growthHeader {
-    margin: 2rem 2rem 4rem 2rem;
     line-height: 1.7;
   }
 }
@@ -62,12 +63,12 @@
     line-height: 1.7;
   }
 
-  .areasHeading {
-    line-height: 1.7;
+  .buttons {
+    justify-content: center;
   }
 
-  .containerContent {
-    padding: 2rem;
+  .areasHeading {
+    line-height: 1.7;
   }
 
   .areasContent {
@@ -126,6 +127,26 @@
     }
   }
 
+  .discount {
+    padding: 4rem 0;
+  }
+
+  .discountBox {
+    padding: 2rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutContent {
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .aboutHeading {
+    text-align: center;
+  }
+
   .contactsMap {
     height: 50vw;
   }
@@ -136,6 +157,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .heading {
+    font-size: 2.5rem;
+  }
+
   .missionSection {
     flex-direction: column-reverse;
     gap: 2rem;
@@ -148,5 +173,48 @@
 
   .areasHeading {
     font-size: 1.5rem;
+  }
+
+  .discountText {
+    font-size: 1.5rem;
+  }
+
+  .discountPercent {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .heading {
+    font-size: 2.3rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .discountBox {
+    padding: 1rem;
+    width: 70%;
+  }
+
+  .discountText {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .growthHeader {
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .discountText {
+    font-size: 1rem;
+  }
+
+  .discountPercent {
+    font-size: 2rem;
   }
 }
