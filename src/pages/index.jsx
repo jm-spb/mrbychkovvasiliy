@@ -43,7 +43,7 @@ const Home = ({ data }) => {
                   производства
                 </p>
               </div>
-              <div>
+              <div className={styles.buttons}>
                 <button className={styles.servicesBtn}>Услуги для бизнеса</button>
                 <button className={styles.questionBtn}>Срочный вопрос</button>
               </div>
