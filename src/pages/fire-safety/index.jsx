@@ -21,7 +21,6 @@ const FireSafety = () => {
                 className={styles.img}
                 placeholder="blurred"
                 layout="fullWidth"
-                // height={400}
               />
               <div className={styles.info}>
                 <h2 className={styles.infoHeading}>Пожарный аудит</h2>
