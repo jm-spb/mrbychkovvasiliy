@@ -18,6 +18,7 @@ const OccupationalSafety = () => {
               <StaticImage
                 src="../../assets/images/occupational-safety/oc-safety-1.webp"
                 alt="Аудит и подготовка документов"
+                className={styles.image}
                 placeholder="blurred"
                 layout="constrained"
               />
@@ -50,6 +51,7 @@ const OccupationalSafety = () => {
               <StaticImage
                 src="../../assets/images/occupational-safety/oc-safety-2.webp"
                 alt="Аутсорсинг по охране труда"
+                className={styles.image}
                 placeholder="blurred"
                 layout="constrained"
               />
@@ -97,6 +99,7 @@ const OccupationalSafety = () => {
               <StaticImage
                 src="../../assets/images/occupational-safety/oc-safety-3.webp"
                 alt="Проведение ежегодных мероприятий"
+                className={styles.image}
                 placeholder="blurred"
                 layout="constrained"
               />
@@ -130,6 +133,7 @@ const OccupationalSafety = () => {
               <StaticImage
                 src="../../assets/images/occupational-safety/oc-safety-4.webp"
                 alt="Расследование несчастных случаев"
+                className={styles.image}
                 placeholder="blurred"
                 layout="constrained"
               />
