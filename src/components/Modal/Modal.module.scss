@@ -1,0 +1,61 @@
+.modal {
+  // display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.card {
+  width: 30rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  justify-self: end;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.heading {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 5.5rem;
+  letter-spacing: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.isActive {
+  opacity: 1;
+  // display: flex;
+  pointer-events: all;
+}
