@@ -1,6 +1,7 @@
 import React from 'react';
 import * as styles from './index.module.scss';
 import { StaticImage } from 'gatsby-plugin-image';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Carousel from '../components/Carousel';
@@ -8,7 +9,8 @@ import AppForm from '../components/AppForm';
 import { activityAreas } from '../content/Home';
 
 const Home = ({ data }) => {
-  console.log(data);
+  const { edges: homePageSwiperData } = data.allHomePageCarouselJson;
+
   return (
     <Layout>
       <main>
@@ -44,7 +46,12 @@ const Home = ({ data }) => {
                 </p>
               </div>
               <div className={styles.buttons}>
-                <button className={styles.servicesBtn}>Услуги для бизнеса</button>
+                <button
+                  className={styles.servicesBtn}
+                  onClick={() => scrollTo('#business-services')}
+                >
+                  Услуги для бизнеса
+                </button>
                 <button className={styles.questionBtn}>Срочный вопрос</button>
               </div>
             </section>
@@ -81,7 +88,7 @@ const Home = ({ data }) => {
               </p>
             </div>
           </section>
-          <section className={styles.areasContent}>
+          <section id="business-services" className={styles.areasContent}>
             <div className={styles.areasCard}>
               <div className={styles.areasText}>
                 <h2>{activityAreas[0].heading}</h2>
@@ -195,7 +202,7 @@ const Home = ({ data }) => {
                 </div>
               </div>
               <div className={styles.growthBottom}>
-                <button className={styles.growthBtn}>Задать свой вопрос</button>
+                {/* <button className={styles.growthBtn}>Задать свой вопрос</button> */}
               </div>
             </div>
 
@@ -222,7 +229,7 @@ const Home = ({ data }) => {
                 </div>
               </div>
               <div className={styles.growthBottom}>
-                <button className={styles.growthBtn}>Написать нам</button>
+                {/* <button className={styles.growthBtn}>Написать нам</button> */}
               </div>
             </div>
 
@@ -248,7 +255,7 @@ const Home = ({ data }) => {
                 </div>
               </div>
               <div className={styles.growthBottom}>
-                <button className={styles.growthBtn}>Заполнить анкету</button>
+                {/* <button className={styles.growthBtn}>Заполнить анкету</button> */}
               </div>
             </div>
           </section>
@@ -269,7 +276,12 @@ const Home = ({ data }) => {
                 </span>
                 <span className={styles.discountPercent}>50%</span>
               </div>
-              <button className={styles.discountBtn}>Заказать!</button>
+              <button
+                className={styles.discountBtn}
+                onClick={() => scrollTo('#request-form')}
+              >
+                Заказать!
+              </button>
             </div>
           </section>
         </article>
@@ -320,10 +332,10 @@ const Home = ({ data }) => {
         </article>
         {/* СЛАЙД 7 - SWIPER */}
         <article>
-          <Carousel data={data.allContentJson.edges[0].node.carousel} />
+          <Carousel data={homePageSwiperData} />
         </article>
         {/* СЛАЙД 8 - ЗАЯВКА */}
-        <article>
+        <article id="request-form">
           <section className={styles.request}>
             <p className={styles.requestText}>
               Звоните 8-800-505-20-41 или оставляйте заявку
@@ -353,7 +365,7 @@ const Home = ({ data }) => {
                 frameBorder="0"
               ></iframe>
             </div>
-            <div className={styles.contactsInfo}>
+            <div>
               <h1 className={styles.contactsHeading}>Контакты</h1>
               <p className={styles.contactsParagraph}>
                 Санкт-Петербург, ул. Липовая Аллея, дом 9, литера А, этаж 9, помещение 25Н
@@ -373,17 +385,16 @@ export default Home;
 
 export const query = graphql`
   {
-    allContentJson {
+    allHomePageCarouselJson {
       edges {
         node {
-          carousel {
-            button
-            heading
-            text
-            imgSrc {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-              }
+          heading
+          text
+          linkName
+          linkRef
+          imgSrc {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
             }
           }
         }
