@@ -6,10 +6,22 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Carousel from '../components/Carousel';
 import AppForm from '../components/AppForm';
+import Modal from '../components/Modal';
 import { activityAreas } from '../content/Home';
 
 const Home = ({ data }) => {
+  const [modalActive, setModalActive] = React.useState(false);
   const { edges: homePageSwiperData } = data.allHomePageCarouselJson;
+
+  const handleModalOn = () => {
+    setModalActive(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const handleModalOff = () => {
+    setModalActive(false);
+    document.body.style.overflow = '';
+  };
 
   return (
     <Layout>
@@ -52,7 +64,9 @@ const Home = ({ data }) => {
                 >
                   Услуги для бизнеса
                 </button>
-                <button className={styles.questionBtn}>Срочный вопрос</button>
+                <button className={styles.questionBtn} onClick={handleModalOn}>
+                  Срочный вопрос
+                </button>
               </div>
             </section>
           </div>
@@ -377,6 +391,7 @@ const Home = ({ data }) => {
           </section>
         </article>
       </main>
+      <Modal isActive={modalActive} closeModal={handleModalOff} />
     </Layout>
   );
 };
