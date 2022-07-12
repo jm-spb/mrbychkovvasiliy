@@ -6,9 +6,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const Carousel = ({ data }) => {
-  console.log(data);
   return (
     <Swiper
       navigation
@@ -21,8 +22,21 @@ const Carousel = ({ data }) => {
       modules={[Pagination, Navigation, Autoplay]}
       className={styles.swiper}
     >
-      {data.map(({ heading, text, imgSrc, button }) => {
+      {data.map(({ node: { heading, text, imgSrc, linkName, linkRef } }) => {
         const image = getImage(imgSrc);
+
+        // create scroll button to form or link to another page
+        const scrollBtnOrLink =
+          linkRef === '#request-form' ? (
+            <button className={styles.btn} onClick={() => scrollTo('#request-form')}>
+              {linkName}
+            </button>
+          ) : (
+            <Link to={linkRef} className={styles.btn}>
+              {linkName}
+            </Link>
+          );
+
         return (
           <SwiperSlide key={heading} className={styles.slide}>
             <GatsbyImage image={image} alt={heading} className={styles.image} />
@@ -32,7 +46,7 @@ const Carousel = ({ data }) => {
                   <h1 className={styles.heading}>{heading}</h1>
                   <p className={styles.paragraph}>{text}</p>
                 </div>
-                <button className={styles.btn}>{button}</button>
+                {linkName ? scrollBtnOrLink : null}
               </div>
             </div>
             <div className={styles.background} />
