@@ -14,4 +14,36 @@
   .content {
     padding: 2rem 4rem 3rem 4rem;
   }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .paragraph {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .content {
+    padding: 2rem 2.2rem 3rem 2.2rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .paragraph {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+  }
 }

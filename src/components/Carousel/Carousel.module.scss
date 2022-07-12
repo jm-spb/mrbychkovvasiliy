@@ -73,6 +73,7 @@
   @include btn-secondary;
   font-size: 1.4rem;
   max-width: fit-content;
+  @include sweep-to-right(white, $btn-secondary-color);
 }
 
 .background {
