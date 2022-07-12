@@ -1,0 +1,86 @@
+@media (max-width: 1080px) {
+  .dropdownContent {
+    right: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    flex-direction: column-reverse;
+    box-shadow: rgba(140, 140, 140, 0.5) 0px 0px 10px 0px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4.5rem 1rem 2rem 1rem;
+  }
+
+  .links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    justify-content: end;
+
+    .container {
+      .hamburger {
+        display: inline-block;
+      }
+    }
+  }
+
+  .menu {
+    width: 100%;
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 0;
+    z-index: 10;
+  }
+
+  .mainLink {
+    color: black;
+    margin: 0;
+    text-align: center;
+
+    &:hover {
+      background-color: #dddddd;
+    }
+  }
+
+  .more {
+    display: none;
+  }
+
+  .dropdownContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 160px);
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+
+  .isActive {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logoName {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .name {
+    text-align: center;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
