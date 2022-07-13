@@ -1,0 +1,25 @@
+@media screen and (max-width: 1080px) {
+  .safety {
+    padding: 4rem 1rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .info {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+}
