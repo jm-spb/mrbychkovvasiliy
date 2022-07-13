@@ -12,7 +12,9 @@ const FireSafety = () => {
     <Layout>
       <main>
         <section className={styles.content}>
-          <h1 className={styles.pageHeading}>Пожарная безопасность</h1>
+          <h1 className={styles.pageHeading} data-sal="zoom-out" data-sal-duration="500">
+            Пожарная безопасность
+          </h1>
           <section className={styles.cards}>
             <article>
               <StaticImage
