@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import classNames from 'classnames';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import { additionalNavLinks, mainNavLinks } from '../../content/Navbar';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 
@@ -13,6 +14,10 @@ const Navbar = () => {
   const toggleButton = () => setIsActive((prevState) => !prevState);
   const closeMenu = () => setIsActive(false);
   useOnClickOutside(ref, () => setIsActive(false));
+
+  React.useEffect(() => {
+    document.body.style.overflow = isActive ? 'hidden' : '';
+  }, [isActive]);
 
   return (
     <nav className={styles.navbar}>
@@ -28,7 +33,9 @@ const Navbar = () => {
           />
           <span className={styles.name}>Центр развития охраны труда</span>
         </Link>
-        <button className={styles.button}>Консультация</button>
+        <button className={styles.button} onClick={() => scrollTo('#request-form')}>
+          Консультация
+        </button>
       </div>
       <div className={styles.links}>
         <div className={styles.container}>
@@ -40,7 +47,7 @@ const Navbar = () => {
             ))}
             <div className={styles.dropdown}>
               <span className={styles.more}>Ещё</span>
-              <div className={styles.dropdownContent}>
+              <div ref={ref} className={styles.dropdownContent}>
                 {additionalNavLinks.map(({ name, link }) => (
                   <Link
                     key={name}
@@ -55,7 +62,7 @@ const Navbar = () => {
             </div>
           </div>
           <span className={styles.phoneNumber}>8-800-505-20-41</span>
-          <div ref={ref} className={styles.hamburger}>
+          <div className={styles.hamburger}>
             <HamburgerSqueeze
               buttonWidth={24}
               barColor="white"
