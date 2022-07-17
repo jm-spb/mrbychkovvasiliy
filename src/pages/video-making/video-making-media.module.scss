@@ -1,0 +1,86 @@
+@media screen and (max-width: 1080px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .clients {
+    padding: 2rem 0;
+  }
+
+  .bottom {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .header {
+    height: 30rem;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .discription {
+    padding: 0;
+  }
+
+  .discHeading {
+    font-size: 2rem;
+  }
+
+  .advantages {
+    padding: 0;
+  }
+
+  .advHeading {
+    font-size: 2rem;
+  }
+
+  .advBlock {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .blockImg {
+    width: 16rem;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .headerText {
+    font-size: 1.3rem;
+  }
+
+  .videoWrap {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .header {
+    height: 20rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .headerText {
+    font-size: 1rem;
+  }
+}
