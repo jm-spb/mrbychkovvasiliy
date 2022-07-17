@@ -2,6 +2,10 @@
 
 .header {
   position: relative;
+  height: 40rem;
+  width: 100%;
+  background: url('../../assets/images/projects/header.webp') no-repeat center center;
+  background-size: cover;
 }
 
 .headerContent {
@@ -75,3 +79,5 @@
     font-weight: 600;
   }
 }
+
+@import './projects-media.module.scss';
