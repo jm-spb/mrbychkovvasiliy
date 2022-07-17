@@ -12,7 +12,9 @@ const OccupationalSafety = () => {
     <Layout>
       <main>
         <section className={styles.content}>
-          <h1 className={styles.pageHeading}>Охрана труда</h1>
+          <h1 className={styles.pageHeading} data-sal="zoom-out" data-sal-duration="500">
+            Охрана труда
+          </h1>
           <section className={styles.cards}>
             <article>
               <StaticImage
