@@ -12,7 +12,9 @@ const IndustrialSafety = () => {
     <Layout>
       <main>
         <section className={styles.safety}>
-          <h1 className={styles.heading}>Промышленная безопасность</h1>
+          <h1 className={styles.heading} data-sal="zoom-out" data-sal-duration="500">
+            Промышленная безопасность
+          </h1>
           <section className={styles.cards}>
             <article>
               <StaticImage
