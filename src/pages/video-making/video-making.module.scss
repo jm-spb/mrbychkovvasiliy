@@ -2,6 +2,10 @@
 
 .header {
   position: relative;
+  height: 40rem;
+  width: 100%;
+  background: url('../../assets/images/video/header.webp') no-repeat center center;
+  background-size: cover;
 }
 
 .headerWrap {
@@ -79,7 +83,9 @@
 }
 
 .advBlock {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
   gap: 2rem;
 
   &:not(:last-child) {
@@ -88,14 +94,7 @@
 }
 
 .blockImg {
-  max-width: 220px;
   border-radius: 50%;
-  flex: 1;
-}
-
-.text {
-  flex: 2;
-  align-self: center;
 }
 
 .blockHeading {
@@ -103,6 +102,7 @@
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .blockParagraph {
@@ -135,5 +135,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 }
+
+@import './video-making-media.module.scss';
