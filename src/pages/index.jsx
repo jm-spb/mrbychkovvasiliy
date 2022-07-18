@@ -37,27 +37,56 @@ const Home = ({ data }) => {
           />
           <div className={styles.container}>
             <section className={styles.section}>
-              <h1 className={styles.heading}>ОХРАНА ТРУДА</h1>
-              <h2 className={styles.subHeading}>для КОМПАНИЙ, СПЕЦИАЛИСТОВ, СТУДЕНТОВ</h2>
+              <h1 className={styles.heading} data-sal="zoom-out">
+                ОХРАНА ТРУДА
+              </h1>
+              <h2 className={styles.subHeading} data-sal="zoom-out">
+                для КОМПАНИЙ, СПЕЦИАЛИСТОВ, СТУДЕНТОВ
+              </h2>
               <div>
-                <p className={styles.paragraph}>
+                <p className={styles.paragraph} data-sal="slide-up">
                   Помогаем компаниям решать нестандартные вопросы по охране труда
                 </p>
-                <p className={styles.paragraph}>
+                <p
+                  className={styles.paragraph}
+                  data-sal="slide-up"
+                  data-sal-delay="200"
+                  data-sal-easing="ease"
+                >
                   Участвуем в проверках, расследуем НС по всей территории РФ
                 </p>
-                <p className={styles.paragraph}>
+                <p
+                  className={styles.paragraph}
+                  data-sal="slide-up"
+                  data-sal-delay="400"
+                  data-sal-easing="ease"
+                >
                   Реализуем нестандартные задачи в области охраны труда и безопасности
                 </p>
-                <p className={styles.paragraph}>
+                <p
+                  className={styles.paragraph}
+                  data-sal="slide-up"
+                  data-sal-delay="600"
+                  data-sal-easing="ease"
+                >
                   Развиваем студентов и специалистов в области охраны труда
                 </p>
-                <p className={styles.paragraph}>
+                <p
+                  className={styles.paragraph}
+                  data-sal="slide-up"
+                  data-sal-delay="800"
+                  data-sal-easing="ease"
+                >
                   Помогаем компаниям создавать эффективные системы безопасности
                   производства
                 </p>
               </div>
-              <div className={styles.buttons}>
+              <div
+                className={styles.buttons}
+                data-sal="slide-up"
+                data-sal-duration="500"
+                data-sal-delay="1000"
+              >
                 <button
                   className={styles.servicesBtn}
                   onClick={() => scrollTo('#business-services')}
@@ -74,21 +103,23 @@ const Home = ({ data }) => {
         {/* СЛАЙД 2 - НАША МИССИЯ */}
         <article className={styles.mission}>
           <section className={styles.missionSection}>
-            <div className={styles.missionContent}>
+            <div className={styles.missionContent} data-sal="slide-right">
               <h2 className={styles.missionHeading}>НАША МИССИЯ:</h2>
               <p className={styles.missionParagraph}>
                 "Проводить мероприятия, которые будут развивать охрану труда. Создавать
                 условия для развития студентов и специалистов в области Техносферной
                 безопасности. Предоставлять качественные услуги по охране труда"
               </p>
-              <button className={styles.missionBtn}>Присоединиться к нам</button>
+              {/* <button className={styles.missionBtn}>Присоединиться к нам</button> */}
             </div>
-            <StaticImage
-              src="../assets/images/index/logo-large.webp"
-              alt="Логотип"
-              placeholder="blurred"
-              layout="constrained"
-            />
+            <div data-sal="slide-left">
+              <StaticImage
+                src="../assets/images/index/logo-large.webp"
+                alt="Логотип"
+                placeholder="blurred"
+                layout="constrained"
+              />
+            </div>
           </section>
         </article>
         {/* СЛАЙД 3 - ОСНОВНЫЕ НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ */}
@@ -103,7 +134,7 @@ const Home = ({ data }) => {
             </div>
           </section>
           <section id="business-services" className={styles.areasContent}>
-            <div className={styles.areasCard}>
+            <div className={styles.areasCard} data-sal="zoom-in" data-sal-easing="ease">
               <div className={styles.areasText}>
                 <h2>{activityAreas[0].heading}</h2>
                 {activityAreas[0].content.map(({ link, text }) => (
@@ -122,7 +153,12 @@ const Home = ({ data }) => {
               <div className={styles.areasBackground} />
             </div>
 
-            <div className={styles.areasCard}>
+            <div
+              className={styles.areasCard}
+              data-sal="zoom-in"
+              data-sal-delay="500"
+              data-sal-easing="ease"
+            >
               <div className={styles.areasText}>
                 <h2>{activityAreas[1].heading}</h2>
                 {activityAreas[1].content.map(({ link, text }) => (
@@ -141,7 +177,7 @@ const Home = ({ data }) => {
               <div className={styles.areasBackground} />
             </div>
 
-            <div className={styles.areasCard}>
+            <div className={styles.areasCard} data-sal="zoom-in" data-sal-easing="ease">
               <div className={styles.areasText}>
                 <h2>{activityAreas[2].heading}</h2>
                 {activityAreas[2].content.map(({ link, text }) => (
@@ -160,7 +196,12 @@ const Home = ({ data }) => {
               <div className={styles.areasBackground} />
             </div>
 
-            <div className={styles.areasCard}>
+            <div
+              className={styles.areasCard}
+              data-sal="zoom-in"
+              data-sal-delay="500"
+              data-sal-easing="ease"
+            >
               <div className={styles.areasText}>
                 <h2>{activityAreas[3].heading}</h2>
                 {activityAreas[3].content.map(({ link, text }) => (
@@ -283,19 +324,25 @@ const Home = ({ data }) => {
               placeholder="blurred"
               layout="constrained"
             />
-            <div className={styles.discountBox}>
-              <div>
+            <div
+              className={styles.discountBox}
+              data-sal="slide-down"
+              data-sal-duration="1000"
+            >
+              <div data-sal="slide-right" data-sal-delay="1000">
                 <span className={styles.discountText}>
                   Для новых клиентов первая услуга за:
                 </span>
                 <span className={styles.discountPercent}>50%</span>
               </div>
-              <button
-                className={styles.discountBtn}
-                onClick={() => scrollTo('#request-form')}
-              >
-                Заказать!
-              </button>
+              <div data-sal="slide-up" data-sal-delay="1000">
+                <button
+                  className={styles.discountBtn}
+                  onClick={() => scrollTo('#request-form')}
+                >
+                  Заказать!
+                </button>
+              </div>
             </div>
           </section>
         </article>
