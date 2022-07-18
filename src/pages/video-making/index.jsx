@@ -14,16 +14,22 @@ const VideoMaking = () => {
     <Layout>
       <main>
         <section className={styles.header}>
-          <StaticImage
-            src="../../assets/images/video/header.webp"
-            alt="Съемка и монтаж производственных видео"
-            placeholder="blurred"
-            layout="fullWidth"
-          />
           <div className={styles.headerWrap}>
             <div className={styles.container}>
-              <h1 className={styles.heading}>Съемка и монтаж производственных видео,</h1>
-              <p className={styles.headerText}>
+              <h1
+                className={styles.heading}
+                data-sal="zoom-out"
+                data-sal-duration="500"
+                data-sal-delay="100"
+              >
+                Съемка и монтаж производственных видео,
+              </h1>
+              <p
+                className={styles.headerText}
+                data-sal="zoom-out"
+                data-sal-duration="500"
+                data-sal-delay="500"
+              >
                 вводного инструктажа, производственной инструкции, правил, презентации
               </p>
             </div>
@@ -36,7 +42,7 @@ const VideoMaking = () => {
             type="video/mp4"
             width="100%"
             height="100%"
-            autoPlay
+            controls
             loop
             muted
           />
@@ -60,7 +66,7 @@ const VideoMaking = () => {
             type="video/mp4"
             width="100%"
             height="100%"
-            autoPlay
+            controls
             loop
             muted
           />
