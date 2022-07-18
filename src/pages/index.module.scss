@@ -50,10 +50,12 @@
 
 .servicesBtn {
   @include btn-outline;
+  @include sweep-to-right($btn-secondary-color, white);
 }
 
 .questionBtn {
   @include btn-main;
+  @include sweep-to-right($btn-secondary-color, white);
 }
 
 .mission {
@@ -319,6 +321,7 @@
   @include btn-secondary;
   max-width: 11rem;
   font-size: 1.5rem;
+  @include sweep-to-right(white, $btn-secondary-color);
 }
 
 .about {
