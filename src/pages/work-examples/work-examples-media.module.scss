@@ -1,0 +1,44 @@
+@media screen and (max-width: 1080px) {
+  .container {
+    padding: 4rem 1rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    padding: 3rem 0 0 0;
+  }
+
+  .example {
+    padding: 2rem 1rem;
+    grid-template-columns: 1fr;
+    box-shadow: rgba(140, 140, 140, 0.5) 0px 0px 10px 0px;
+    text-align: center;
+  }
+
+  .image {
+    display: none;
+  }
+
+  .exampleHeading {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 2rem auto;
+
+    &:after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: $btn-secondary-color;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mainHeading {
+    font-size: 2.2rem;
+  }
+}
