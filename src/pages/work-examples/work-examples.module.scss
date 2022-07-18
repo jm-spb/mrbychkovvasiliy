@@ -24,7 +24,7 @@
 .examples {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 4rem;
   margin-top: 4rem;
 }
 
@@ -40,3 +40,5 @@
   font-weight: 300;
   margin-bottom: 1rem;
 }
+
+@import './work-examples-media.module.scss';

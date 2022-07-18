@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../../components/Layout';
 
 const WorkExamples = ({ data }) => {
-  const { workExamples } = data.allContentJson.edges[1].node;
+  const { edges: workExamplesData } = data.allWorkExamplesJson;
 
   return (
     <Layout>
@@ -16,12 +16,12 @@ const WorkExamples = ({ data }) => {
             Для того что бы вам, было легче узнать похожую ситуацию и увидеть пути решения
           </p>
           <section className={styles.examples}>
-            {workExamples.map(({ imgSrc, heading, text }) => {
+            {workExamplesData.map(({ node: { imgSrc, heading, text } }) => {
               const image = getImage(imgSrc);
 
               return (
                 <article key={heading} className={styles.example}>
-                  <GatsbyImage image={image} alt={heading} />
+                  <GatsbyImage image={image} alt={heading} className={styles.image} />
                   <div>
                     <h2 className={styles.exampleHeading}>{heading}</h2>
                     <p className={styles.paragraph}>{text}</p>
@@ -40,16 +40,14 @@ export default WorkExamples;
 
 export const query = graphql`
   {
-    allContentJson {
+    allWorkExamplesJson {
       edges {
         node {
-          workExamples {
-            heading
-            text
-            imgSrc {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-              }
+          text
+          heading
+          imgSrc {
+            childImageSharp {
+              gatsbyImageData(layout: FIXED, placeholder: BLURRED)
             }
           }
         }
