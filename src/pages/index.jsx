@@ -3,6 +3,7 @@ import * as styles from './index.module.scss';
 import { StaticImage } from 'gatsby-plugin-image';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { graphql } from 'gatsby';
+import { GrShare } from 'react-icons/gr';
 import Layout from '../components/Layout';
 import Carousel from '../components/Carousel';
 import AppForm from '../components/AppForm';
@@ -37,56 +38,27 @@ const Home = ({ data }) => {
           />
           <div className={styles.container}>
             <section className={styles.section}>
-              <h1 className={styles.heading} data-sal="zoom-out">
-                ОХРАНА ТРУДА
-              </h1>
-              <h2 className={styles.subHeading} data-sal="zoom-out">
-                для КОМПАНИЙ, СПЕЦИАЛИСТОВ, СТУДЕНТОВ
-              </h2>
+              <h1 className={styles.heading}>ОХРАНА ТРУДА</h1>
+              <h2 className={styles.subHeading}>для КОМПАНИЙ, СПЕЦИАЛИСТОВ, СТУДЕНТОВ</h2>
               <div>
-                <p className={styles.paragraph} data-sal="slide-up">
+                <p className={styles.paragraph}>
                   Помогаем компаниям решать нестандартные вопросы по охране труда
                 </p>
-                <p
-                  className={styles.paragraph}
-                  data-sal="slide-up"
-                  data-sal-delay="200"
-                  data-sal-easing="ease"
-                >
+                <p className={styles.paragraph}>
                   Участвуем в проверках, расследуем НС по всей территории РФ
                 </p>
-                <p
-                  className={styles.paragraph}
-                  data-sal="slide-up"
-                  data-sal-delay="400"
-                  data-sal-easing="ease"
-                >
+                <p className={styles.paragraph}>
                   Реализуем нестандартные задачи в области охраны труда и безопасности
                 </p>
-                <p
-                  className={styles.paragraph}
-                  data-sal="slide-up"
-                  data-sal-delay="600"
-                  data-sal-easing="ease"
-                >
+                <p className={styles.paragraph}>
                   Развиваем студентов и специалистов в области охраны труда
                 </p>
-                <p
-                  className={styles.paragraph}
-                  data-sal="slide-up"
-                  data-sal-delay="800"
-                  data-sal-easing="ease"
-                >
+                <p className={styles.paragraph}>
                   Помогаем компаниям создавать эффективные системы безопасности
                   производства
                 </p>
               </div>
-              <div
-                className={styles.buttons}
-                data-sal="slide-up"
-                data-sal-duration="500"
-                data-sal-delay="1000"
-              >
+              <div className={styles.buttons}>
                 <button
                   className={styles.servicesBtn}
                   onClick={() => scrollTo('#business-services')}
@@ -103,7 +75,7 @@ const Home = ({ data }) => {
         {/* СЛАЙД 2 - НАША МИССИЯ */}
         <article className={styles.mission}>
           <section className={styles.missionSection}>
-            <div className={styles.missionContent} data-sal="slide-right">
+            <div className={styles.missionContent}>
               <h2 className={styles.missionHeading}>НАША МИССИЯ:</h2>
               <p className={styles.missionParagraph}>
                 "Проводить мероприятия, которые будут развивать охрану труда. Создавать
@@ -112,18 +84,17 @@ const Home = ({ data }) => {
               </p>
               {/* <button className={styles.missionBtn}>Присоединиться к нам</button> */}
             </div>
-            <div data-sal="slide-left">
-              <StaticImage
-                src="../assets/images/index/logo-large.webp"
-                alt="Логотип"
-                placeholder="blurred"
-                layout="constrained"
-              />
-            </div>
+            <StaticImage
+              src="../assets/images/index/logo-large.webp"
+              alt="Логотип"
+              className={styles.missionLogo}
+              placeholder="blurred"
+              layout="constrained"
+            />
           </section>
         </article>
         {/* СЛАЙД 3 - ОСНОВНЫЕ НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ */}
-        <article>
+        <article className={styles.areas}>
           <section className={styles.areasHeader}>
             <div className={styles.containerContent}>
               <h2 className={styles.areasHeading}>Основные направления деятельности</h2>
@@ -134,13 +105,11 @@ const Home = ({ data }) => {
             </div>
           </section>
           <section id="business-services" className={styles.areasContent}>
-            <div className={styles.areasCard} data-sal="zoom-in" data-sal-easing="ease">
+            <div className={styles.areasCard}>
               <div className={styles.areasText}>
                 <h2>{activityAreas[0].heading}</h2>
-                {activityAreas[0].content.map(({ link, text }) => (
-                  <a key={text} href={link} target="_blanc">
-                    {text}
-                  </a>
+                {activityAreas[0].content.map(({ text }) => (
+                  <p key={text}>{text}</p>
                 ))}
               </div>
               <StaticImage
@@ -150,21 +119,21 @@ const Home = ({ data }) => {
                 placeholder="blurred"
                 layout="constrained"
               />
-              <div className={styles.areasBackground} />
+              <a
+                href="/occupational-safety"
+                className={styles.areasMoreLink}
+                target="_blanc"
+                rel="noopener noreferrer"
+              >
+                <span className={styles.areasMoreLinkText}>Подробнее</span>
+              </a>
             </div>
 
-            <div
-              className={styles.areasCard}
-              data-sal="zoom-in"
-              data-sal-delay="500"
-              data-sal-easing="ease"
-            >
+            <div className={styles.areasCard}>
               <div className={styles.areasText}>
                 <h2>{activityAreas[1].heading}</h2>
-                {activityAreas[1].content.map(({ link, text }) => (
-                  <a key={text} href={link} target="_blanc">
-                    {text}
-                  </a>
+                {activityAreas[1].content.map(({ text }) => (
+                  <p key={text}>{text}</p>
                 ))}
               </div>
               <StaticImage
@@ -174,16 +143,21 @@ const Home = ({ data }) => {
                 placeholder="blurred"
                 layout="constrained"
               />
-              <div className={styles.areasBackground} />
+              <a
+                href="/fire-safety"
+                className={styles.areasMoreLink}
+                target="_blanc"
+                rel="noopener noreferrer"
+              >
+                <span className={styles.areasMoreLinkText}>Подробнее</span>
+              </a>
             </div>
 
-            <div className={styles.areasCard} data-sal="zoom-in" data-sal-easing="ease">
+            <div className={styles.areasCard}>
               <div className={styles.areasText}>
                 <h2>{activityAreas[2].heading}</h2>
-                {activityAreas[2].content.map(({ link, text }) => (
-                  <a key={text} href={link} target="_blanc">
-                    {text}
-                  </a>
+                {activityAreas[2].content.map(({ text }) => (
+                  <p key={text}>{text}</p>
                 ))}
               </div>
               <StaticImage
@@ -193,21 +167,21 @@ const Home = ({ data }) => {
                 placeholder="blurred"
                 layout="constrained"
               />
-              <div className={styles.areasBackground} />
+              <a
+                href="/industrial-safety"
+                className={styles.areasMoreLink}
+                target="_blanc"
+                rel="noopener noreferrer"
+              >
+                <span className={styles.areasMoreLinkText}>Подробнее</span>
+              </a>
             </div>
 
-            <div
-              className={styles.areasCard}
-              data-sal="zoom-in"
-              data-sal-delay="500"
-              data-sal-easing="ease"
-            >
+            <div className={styles.areasCard}>
               <div className={styles.areasText}>
                 <h2>{activityAreas[3].heading}</h2>
-                {activityAreas[3].content.map(({ link, text }) => (
-                  <a key={text} href={link} target="_blanc">
-                    {text}
-                  </a>
+                {activityAreas[3].content.map(({ text }) => (
+                  <p key={text}>{text}</p>
                 ))}
               </div>
               <StaticImage
@@ -217,7 +191,6 @@ const Home = ({ data }) => {
                 placeholder="blurred"
                 layout="constrained"
               />
-              <div className={styles.areasBackground} />
             </div>
           </section>
         </article>
@@ -340,7 +313,7 @@ const Home = ({ data }) => {
                   className={styles.discountBtn}
                   onClick={() => scrollTo('#request-form')}
                 >
-                  Заказать!
+                  Заказать !
                 </button>
               </div>
             </div>
@@ -364,11 +337,11 @@ const Home = ({ data }) => {
                 Включены в реестр Мин.Труда РФ{' '}
                 <a
                   href="https://83360706-4eb9-40e0-b671-ab81fa291e44.filesusr.com/ugd/598d9b_e11f65770d004ee5a97bf21f519d8399.pdf"
-                  className={styles.aboutLink}
                   target="__blanc"
                   rel="noopener noreferrer"
                 >
-                  №7888
+                  <span className={styles.aboutLink}>№7888</span>{' '}
+                  <GrShare className={styles.aboutShare} />
                 </a>
               </p>
               <p className={styles.aboutParagraph}>
@@ -404,9 +377,10 @@ const Home = ({ data }) => {
             <p className={styles.requestText}>
               Мы понимаем, что вопросы охраны труда и производственной безопасности носят
               неотлагательный характер и зачастую их решение необходимо прямо сейчас или
-              нужно было вчера. Специалисты Первый Трудовой.РФ смогут решить даже самые
-              сложные и критические вопросы. И прежде всего мы гарантируем качество
-              предоставляемых услуг в срок и конфиденциальность если ее требует заказчик.
+              нужно было вчера. Специалисты Центра Развития Охраны Труда смогут решить
+              даже самые сложные и критические вопросы. И прежде всего мы гарантируем
+              качество предоставляемых услуг в срок и конфиденциальность если ее требует
+              заказчик.
             </p>
             <p className={styles.requestText}>
               Уже сегодня наши специалисты будут решать ваши задачи.
