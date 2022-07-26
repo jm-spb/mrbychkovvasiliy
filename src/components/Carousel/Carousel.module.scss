@@ -71,7 +71,8 @@
 
 .btn {
   @include btn-secondary;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  padding: 1.1rem;
   max-width: fit-content;
   @include sweep-to-right(white, $btn-secondary-color);
 }
