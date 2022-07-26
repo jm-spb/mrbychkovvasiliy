@@ -1,6 +1,7 @@
 import React from 'react';
 import * as styles from './AppForm.module.scss';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const AppForm = () => {
   const {
@@ -13,47 +14,53 @@ const AppForm = () => {
   });
 
   React.useEffect(() => {
-    console.log('render');
     if (isSubmitSuccessful) {
       reset();
     }
   }, [isSubmitSuccessful, reset]);
 
-  const onSubmit = ({ name, phone }) => {
-    console.log(name, phone);
+  const onSubmit = ({ Name, rawPhoneNumber }) => {
+    axios
+      .post('https://sheet.best/api/sheets/52b79214-9dc4-4c7f-bac7-8ef4c1d92c73', {
+        Name,
+        rawPhoneNumber,
+      })
+      .then((res) => console.log(res));
   };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <label className={styles.label} htmlFor="name">
+      <label className={styles.label} htmlFor="Name">
         Имя
         <input
-          {...register('name', {
+          {...register('Name', {
             required: 'Укажите своё имя',
           })}
           className={styles.input}
-          id="name"
+          id="Name"
           type="text"
           placeholder="Ваше Имя"
         />
       </label>
       <div className={styles.errorBox}>
-        {errors?.name && <span className={styles.error}>{errors?.name.message}</span>}
+        {errors?.Name && <span className={styles.error}>{errors?.Name.message}</span>}
       </div>
-      <label className={styles.label} htmlFor="phone">
+      <label className={styles.label} htmlFor="rawPhoneNumber">
         Телефон
         <input
-          {...register('phone', {
+          {...register('rawPhoneNumber', {
             required: 'Укажите номер телефона',
           })}
           className={styles.input}
-          id="phone"
+          id="rawPhoneNumber"
           type="tel"
           placeholder="Ваш номер телефона"
         />
       </label>
       <div className={styles.errorBox}>
-        {errors?.phone && <span className={styles.error}>{errors?.phone.message}</span>}
+        {errors?.rawPhoneNumber && (
+          <span className={styles.error}>{errors?.rawPhoneNumber.message}</span>
+        )}
       </div>
       <div className={styles.btn}>
         <button className={styles.submit} type="submit" disabled={!isValid}>
