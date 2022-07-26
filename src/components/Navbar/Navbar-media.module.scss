@@ -33,7 +33,7 @@
   .menu {
     width: 100%;
     position: absolute;
-    top: 2.5rem;
+    top: 3.5rem;
     left: 0;
     display: none;
     flex-direction: column;
@@ -82,5 +82,12 @@
 
   .button {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .mainLink,
+  .addLink {
+    font-size: 0.9rem;
   }
 }
