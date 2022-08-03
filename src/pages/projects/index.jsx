@@ -10,30 +10,11 @@ const Projects = () => {
         <section className={styles.header}>
           <article className={styles.headerContent}>
             <div className={styles.container}>
-              <h1
-                className={styles.headerHeading}
-                data-sal="zoom-out"
-                data-sal-duration="500"
-                data-sal-delay="100"
-              >
+              <h1 className={styles.headerHeading}>
                 Внедрение проектов по охране труда и производственной безопасности
               </h1>
-              <p
-                className={styles.headerParagraph}
-                data-sal="zoom-out"
-                data-sal-duration="500"
-                data-sal-delay="500"
-              >
-                Краткосрочные (до 3 месяцев){' '}
-              </p>
-              <p
-                className={styles.headerParagraph}
-                data-sal="zoom-out"
-                data-sal-duration="500"
-                data-sal-delay="500"
-              >
-                Долгосрочные (от 1 до 3 лет)
-              </p>
+              <p className={styles.headerParagraph}>Краткосрочные (до 3 месяцев) </p>
+              <p className={styles.headerParagraph}>Долгосрочные (от 1 до 3 лет)</p>
             </div>
           </article>
         </section>
