@@ -76,11 +76,16 @@
     height: 20rem;
   }
 
-  .heading {
+  .heading,
+  .discHeading,
+  .advHeading,
+  .topHeading {
     font-size: 1.5rem;
   }
 
-  .headerText {
+  .headerText,
+  .topParagraph,
+  .blockParagraph {
     font-size: 1rem;
   }
 }
