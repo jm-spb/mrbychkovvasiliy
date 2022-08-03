@@ -16,20 +16,8 @@ const VideoMaking = () => {
         <section className={styles.header}>
           <div className={styles.headerWrap}>
             <div className={styles.container}>
-              <h1
-                className={styles.heading}
-                data-sal="zoom-out"
-                data-sal-duration="500"
-                data-sal-delay="100"
-              >
-                Съемка и монтаж производственных видео,
-              </h1>
-              <p
-                className={styles.headerText}
-                data-sal="zoom-out"
-                data-sal-duration="500"
-                data-sal-delay="500"
-              >
+              <h1 className={styles.heading}>Съемка и монтаж производственных видео,</h1>
+              <p className={styles.headerText}>
                 вводного инструктажа, производственной инструкции, правил, презентации
               </p>
             </div>
