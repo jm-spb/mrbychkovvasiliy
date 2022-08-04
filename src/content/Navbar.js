@@ -6,11 +6,7 @@ export const mainNavLinks = [
   {
     name: 'Пожарная безопасность',
     link: '/fire-safety',
-  },
-  {
-    name: 'База специалистов',
-    link: '/human-resources',
-  },
+  },  
   {
     name: 'Съёмка видео',
     link: '/video-making',
