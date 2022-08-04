@@ -1,17 +1,6 @@
-@media screen and (max-width: 1200px) {
-  .missionSection,
-  .request,
-  .contactsContainer,
-  .areasText,
-  .aboutContent,
-  .growthHeader,
-  .containerContent,
-  .container {
+@media screen and (max-width: 1440px) {
+  .areasText {
     padding: 2rem 1rem;
-  }
-
-  .contactsHeading {
-    font-size: 2rem;
   }
 
   .areasText {
@@ -30,13 +19,19 @@
   }
 }
 
-@media screen and (max-width: 1080px) {
-  .occupImg {
-    display: none;
+@media screen and (max-width: 1200px) {
+  .missionSection,
+  .request,
+  .contactsContainer,
+  .aboutContent,
+  .growthHeader,
+  .containerContent,
+  .container {
+    padding: 2rem 1rem;
   }
 
-  .container {
-    position: static;
+  .contactsHeading {
+    font-size: 2rem;
   }
 
   .areasContent {
@@ -46,6 +41,24 @@
 
   .areasText {
     top: 15%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .occupImg {
+    display: none;
+  }
+
+  .container {
+    position: static;
+  }
+
+  .section {
+    align-items: center;
+
+    & > div {
+      text-align: center;
+    }
   }
 
   .growthHeader {
@@ -67,6 +80,14 @@
     justify-content: center;
   }
 
+  .areas {
+    padding: 0;
+  }
+
+  .containerContent {
+    margin: 0 auto 0 auto;
+  }
+
   .areasHeading {
     line-height: 1.7;
   }
@@ -81,9 +102,13 @@
     color: #ffffff;
     text-align: center;
 
-    &:nth-child(n) {
-      .areasBackground {
-        display: none;
+    &:hover:not(:last-child):before {
+      opacity: 0;
+    }
+
+    &:hover {
+      .areasMoreLink {
+        opacity: 0;
       }
     }
   }
