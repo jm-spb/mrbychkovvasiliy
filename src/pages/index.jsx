@@ -8,6 +8,7 @@ import Layout from '../components/Layout';
 import Carousel from '../components/Carousel';
 import AppForm from '../components/AppForm';
 import Modal from '../components/Modal';
+import Seo from '../components/Seo';
 import { activityAreas } from '../content/Home';
 
 const Home = ({ data }) => {
@@ -26,6 +27,7 @@ const Home = ({ data }) => {
 
   return (
     <Layout>
+      <Seo />
       <main>
         {/* СЛАЙД 1 - ОХРАНА ТРУДА */}
         <article className={styles.occupational}>
