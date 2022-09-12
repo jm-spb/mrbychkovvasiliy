@@ -11,6 +11,10 @@ export const mainNavLinks = [
     name: 'Съёмка видео',
     link: '/video-making',
   },
+  {
+    name: 'Мероприятия',
+    link: '/activities',
+  },
 ];
 
 export const additionalNavLinks = [
