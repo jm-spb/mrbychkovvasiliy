@@ -1,0 +1,64 @@
+@import '../../styles/config';
+
+.activities {
+  @include container-content;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.mainHeading {
+  @include heading-main;
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 300;
+  text-align: center;
+}
+
+.card {
+  @include card-shadow;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+
+  @media screen and (min-width: 720px) {
+    @include grow-animation;
+  }
+}
+
+.sectionHeading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cardHeading {
+  font-weight: 400;
+}
+
+.cardContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.cardImg {
+  border-radius: 0.5rem;
+}
+
+.cardParagraph {
+  line-height: 1.7;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+@import './activities-media.module.scss';
