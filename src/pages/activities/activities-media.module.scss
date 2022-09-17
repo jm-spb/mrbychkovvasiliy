@@ -1,0 +1,33 @@
+@media screen and (max-width: 1080px) {
+  .activities {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .cardContent {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeading {
+    font-size: 1.8rem;
+  }
+
+  .cardHeading {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mainHeading {
+    font-size: 1.8rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+  }
+
+  .sectionHeading {
+    font-size: 1.6rem;
+  }
+}
