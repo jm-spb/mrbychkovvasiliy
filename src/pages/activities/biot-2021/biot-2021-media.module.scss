@@ -1,0 +1,36 @@
+@media screen and (max-width: 1080px) {
+  .biot {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .mainHeading,
+  .docsHeading {
+    font-size: 1.8rem;
+  }
+
+  .subHeading {
+    font-size: 1.4rem;
+  }
+
+  .paragraph,
+  .link {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mainHeading {
+    font-size: 1.8rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+  }
+
+  .sectionHeading,
+  .docsHeading {
+    font-size: 1.6rem;
+  }
+}
