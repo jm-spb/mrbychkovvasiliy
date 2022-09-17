@@ -1,0 +1,70 @@
+@import '../../../styles/config';
+
+.biot {
+  @include container-content;
+  margin: 0 auto;
+  padding: 4rem 0;
+  display: grid;
+  gap: 4rem;
+}
+
+.mainHeading {
+  @include heading-main;
+  margin-bottom: 2rem;
+}
+
+.subHeading {
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.content {
+  display: grid;
+  gap: 2rem;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.img {
+  max-width: 40rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.docs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.docsHeading {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.doc {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  min-width: 1.4rem;
+  min-height: 1.4rem;
+
+  path {
+    stroke: #00a4ef;
+  }
+}
+
+.link {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+@import './biot-2021-media.module.scss';
