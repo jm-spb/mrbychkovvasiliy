@@ -1,14 +1,14 @@
 import React from 'react';
 import * as styles from './video-making.module.scss';
+import { graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../../components/Layout';
+import Discount from '../../components/Discount';
 import video_1 from '../../assets/video/video-1.mp4';
 import video_2 from '../../assets/video/video-2.mp4';
-import { StaticImage } from 'gatsby-plugin-image';
-import { discountVideoContent } from '../../content/discount';
-import Discount from '../../components/Discount';
 
-const VideoMaking = () => {
-  const { heading, text_1, text_2 } = discountVideoContent;
+const VideoMaking = ({ data }) => {
+  const { heading, mainText, additionalText } = data.allDiscountContentJson.edges[0].node;
 
   return (
     <Layout>
@@ -168,10 +168,24 @@ const VideoMaking = () => {
             </div>
           </article>
         </section>
-        <Discount heading={heading} text_1={text_1} text_2={text_2} />
+        <Discount heading={heading} mainText={mainText} additionalText={additionalText} />
       </main>
     </Layout>
   );
 };
 
 export default VideoMaking;
+
+export const query = graphql`
+  {
+    allDiscountContentJson {
+      edges {
+        node {
+          heading
+          mainText
+          additionalText
+        }
+      }
+    }
+  }
+`;
