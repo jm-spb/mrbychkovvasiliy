@@ -1,6 +1,6 @@
 import React from 'react';
 import * as styles from './index.module.scss';
-import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { graphql } from 'gatsby';
 import { GrShare } from 'react-icons/gr';
@@ -9,10 +9,10 @@ import Carousel from '../components/Carousel';
 import AppForm from '../components/AppForm';
 import Modal from '../components/Modal';
 import Seo from '../components/Seo';
-import { activityAreas } from '../content/Home';
 
 const Home = ({ data }) => {
   const [modalActive, setModalActive] = React.useState(false);
+  const { edges: mainActivityAreas } = data.allMainActivityAreasJson;
   const { edges: homePageSwiperData } = data.allHomePageCarouselJson;
 
   const handleModalOn = () => {
@@ -31,12 +31,14 @@ const Home = ({ data }) => {
       <main>
         {/* СЛАЙД 1 - ОХРАНА ТРУДА */}
         <article className={styles.occupational}>
+          <div className={styles.backgr}></div>
           <StaticImage
             src="../assets/images/index/index-1.webp"
             alt="Центр развития охраны труда"
             className={styles.occupImg}
             placeholder="blurred"
             layout="fullWidth"
+            quality={100}
           />
           <div className={styles.container}>
             <section className={styles.section}>
@@ -107,93 +109,39 @@ const Home = ({ data }) => {
             </div>
           </section>
           <section id="business-services" className={styles.areasContent}>
-            <div className={styles.areasCard}>
-              <div className={styles.areasText}>
-                <h2>{activityAreas[0].heading}</h2>
-                {activityAreas[0].content.map(({ text }) => (
-                  <p key={text}>{text}</p>
-                ))}
-              </div>
-              <StaticImage
-                src="../assets/images/index/index-2.webp"
-                alt={activityAreas[0].heading}
-                className={styles.areasImg}
-                placeholder="blurred"
-                layout="constrained"
-              />
-              <a
-                href="/occupational-safety"
-                className={styles.areasMoreLink}
-                target="_blanc"
-                rel="noopener noreferrer"
-              >
-                <span className={styles.areasMoreLinkText}>Подробнее</span>
-              </a>
-            </div>
+            {mainActivityAreas.map(
+              ({ node: { id, imgSrc, heading, content, linkToPage } }) => {
+                const image = getImage(imgSrc);
 
-            <div className={styles.areasCard}>
-              <div className={styles.areasText}>
-                <h2>{activityAreas[1].heading}</h2>
-                {activityAreas[1].content.map(({ text }) => (
-                  <p key={text}>{text}</p>
-                ))}
-              </div>
-              <StaticImage
-                src="../assets/images/index/index-3.webp"
-                alt={activityAreas[1].heading}
-                className={styles.areasImg}
-                placeholder="blurred"
-                layout="constrained"
-              />
-              <a
-                href="/fire-safety"
-                className={styles.areasMoreLink}
-                target="_blanc"
-                rel="noopener noreferrer"
-              >
-                <span className={styles.areasMoreLinkText}>Подробнее</span>
-              </a>
-            </div>
-
-            <div className={styles.areasCard}>
-              <div className={styles.areasText}>
-                <h2>{activityAreas[2].heading}</h2>
-                {activityAreas[2].content.map(({ text }) => (
-                  <p key={text}>{text}</p>
-                ))}
-              </div>
-              <StaticImage
-                src="../assets/images/index/index-4.webp"
-                alt={activityAreas[2].heading}
-                className={styles.areasImg}
-                placeholder="blurred"
-                layout="constrained"
-              />
-              <a
-                href="/industrial-safety"
-                className={styles.areasMoreLink}
-                target="_blanc"
-                rel="noopener noreferrer"
-              >
-                <span className={styles.areasMoreLinkText}>Подробнее</span>
-              </a>
-            </div>
-
-            <div className={styles.areasCard}>
-              <div className={styles.areasText}>
-                <h2>{activityAreas[3].heading}</h2>
-                {activityAreas[3].content.map(({ text }) => (
-                  <p key={text}>{text}</p>
-                ))}
-              </div>
-              <StaticImage
-                src="../assets/images/index/index-5.webp"
-                alt={activityAreas[3].heading}
-                className={styles.areasImg}
-                placeholder="blurred"
-                layout="constrained"
-              />
-            </div>
+                return (
+                  <div key={id} className={styles.areasCard}>
+                    <div className={styles.areasText}>
+                      <h2>{heading}</h2>
+                      {content.map((text) => (
+                        <p key={text}>{text}</p>
+                      ))}
+                    </div>
+                    <GatsbyImage
+                      image={image}
+                      alt={heading}
+                      className={styles.areasImg}
+                    />
+                    <a
+                      href={linkToPage}
+                      className={styles.areasMoreLink}
+                      target="_blanc"
+                      rel="noopener noreferrer"
+                    >
+                      {heading === 'Экология' ? (
+                        ''
+                      ) : (
+                        <span className={styles.areasMoreLinkText}>Подробнее</span>
+                      )}
+                    </a>
+                  </div>
+                );
+              },
+            )}
           </section>
         </article>
         {/* СЛАЙД 4 - НАПРАВЛЕНИЯ РАЗВИТИЯ ОХРАНЫ ТРУДА */}
@@ -423,6 +371,21 @@ export default Home;
 
 export const query = graphql`
   {
+    allMainActivityAreasJson {
+      edges {
+        node {
+          content
+          heading
+          id
+          linkToPage
+          imgSrc {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+            }
+          }
+        }
+      }
+    }
     allHomePageCarouselJson {
       edges {
         node {
